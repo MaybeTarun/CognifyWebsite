@@ -15,3 +15,12 @@ window.addEventListener('scroll', () => {
         hill1.style.top = value * 1 + 'px';
     }
 });
+
+var animation = bodymovin.loadAnimation({
+    container:document.getElementById('animation'),
+    path: 'he.json',
+    render:'svg',
+    loop:true,
+    autoplay: true,
+    name:'demo animation',
+});
