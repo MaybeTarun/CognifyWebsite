@@ -85,7 +85,8 @@ header {
 .about h1 {
     font-size: 3em;
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .about p {
@@ -94,16 +95,31 @@ header {
     font-weight: 300;
     text-align: justify;
     text-justify: inter-word;
-    margin-right: 500px;
+    margin-right: 300px;
 }
 
 .about p .kindatitle {
     font-size: 1.5em;
 }
 
-.hexagon {
-    height: 300px;
-    width: 200px;
+.abtlogo {
+    position: absolute;
+    top: 25%;
+    left: 80%;
+    width: 30%;
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .guide {
@@ -219,14 +235,13 @@ small{
 }
 
 .social-box{
-    background: #68ccc4;
     margin: 60px auto 20px;
     border-radius: 3px;
     text-align: center;
+    padding: 10px;
 }
 
 .social-box .fa{
-    margin:5px;
     color: #fff;
     cursor: pointer;
 }
@@ -273,3 +288,106 @@ small{
     background: #68ccc4;
 }
 
+.totop {
+    display: none;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.totop:hover {
+    cursor: pointer;
+}
+
+.totop.show{
+    opacity: 1;
+}
+
+.buttonDownload {
+    border-radius: 5px;
+    display: inline-block;
+    position: absolute;
+    padding: 10px 25px;
+    background-color: #333;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 0.9em;
+    text-align: center;
+    text-indent: 15px;
+    border: none;
+    /* z-index: 99; */
+    top: 57%;
+    left: 44%;
+}
+
+.buttonDownload:hover {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.buttonDownload:before, .buttonDownload:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+}
+
+.buttonDownload:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+}
+
+.buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: -7px;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+    animation: downloadArrow 1s linear infinite;
+    animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+    border-color: #cdefbd;
+}
+
+.buttonDownload:hover:after {
+    border-top-color: #cdefbd;
+    animation-play-state: running;
+}
+
+@keyframes downloadArrow {
+0% {
+    margin-top: -7px;
+    opacity: 1;
+}
+
+0.001% {
+    margin-top: -15px;
+    opacity: 0.4;
+}
+
+50% {
+    opacity: 1;
+}
+
+100% {
+    margin-top: 0;
+    opacity: 0.4;
+}
+}
