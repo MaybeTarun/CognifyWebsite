@@ -239,6 +239,7 @@ small{
     border-radius: 3px;
     text-align: center;
     padding: 10px;
+    justify-content: space-between;
 }
 
 .social-box .fa{
