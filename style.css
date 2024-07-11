@@ -102,6 +102,11 @@ header {
     font-size: 1.5em;
 }
 
+.about introbtn {
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
 .abtlogo {
     position: absolute;
     top: 25%;
